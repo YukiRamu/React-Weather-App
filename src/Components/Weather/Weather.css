@@ -1,0 +1,56 @@
+p {
+  font-size: 1.5rem;
+}
+
+.container {
+  background-color: #1a35528d;
+  color: white;
+  font-family: "Baloo Tammudu 2", cursive !important;
+}
+
+.container .city h2 {
+  text-align: center;
+}
+
+.container .weather {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .weather .temperature {
+  text-align: right;
+}
+
+.container .weather .temperature .temp {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.container .weather .temperature div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  grid-gap: 1rem;
+}
+
+.container .weather .mainInfo {
+  text-align: center;
+}
+
+.container .weather .subInfo {
+  text-align: left;
+}
+
+.loading {
+  color: white;
+  text-align: center;
+}
+/*# sourceMappingURL=Weather.css.map */

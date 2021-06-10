@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,KAAK,ECKC,KAAK;CDJZ",
+    "sources": [
+        "Header.scss",
+        "../../_color.scss"
+    ],
+    "names": [],
+    "file": "Header.css"
+}
