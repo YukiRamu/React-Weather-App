@@ -1,6 +1,17 @@
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+footer a {
+  text-decoration: none;
   color: white;
-  text-align: center;
-  font-family: 'Baloo Tammudu 2', cursive !important;
+}
+
+footer a:hover {
+  color: #e2560d;
 }
 /*# sourceMappingURL=Footer.css.map */

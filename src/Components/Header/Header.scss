@@ -1,6 +1,9 @@
 @import "../../color";
 
-header {
-  color: $white;
-  font-family: 'Baloo Tammudu 2', cursive !important;
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
 }

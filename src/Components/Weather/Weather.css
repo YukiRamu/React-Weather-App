@@ -2,17 +2,13 @@ p {
   font-size: 1.5rem;
 }
 
-.container {
-  background-color: #1a35528d;
-  color: white;
-  font-family: "Baloo Tammudu 2", cursive !important;
+.weatherContainer {
+  padding: 2rem;
+  /* left */
+  /* right */
 }
 
-.container .city h2 {
-  text-align: center;
-}
-
-.container .weather {
+.weatherContainer .left .currentRow {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -22,35 +18,66 @@ p {
           align-items: center;
 }
 
-.container .weather .temperature {
+.weatherContainer .left .currentRow .temperature {
   text-align: right;
 }
 
-.container .weather .temperature .temp {
-  font-size: 4rem;
-  font-weight: bold;
+.weatherContainer .left .currentRow .temperature .temp {
+  font-size: 7rem;
 }
 
-.container .weather .temperature div {
+.weatherContainer .left .currentRow .city h2 {
+  font-size: 4rem;
+}
+
+.weatherContainer .left .currentRow .icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+}
+
+.weatherContainer .right {
+  background-color: #04182ce4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.weatherContainer .right .searchRow {
+  padding: 1rem;
+}
+
+.weatherContainer .right .searchRow a {
+  text-decoration: none;
+  color: white;
+}
+
+.weatherContainer .right .searchRow a:hover {
+  color: #e2560d;
+}
+
+.weatherContainer .right .detailRow {
+  padding: 1rem;
+}
+
+.weatherContainer .right .detailRow h3 {
+  border-top: 0.1rem #e7cfbf solid;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.weatherContainer .right .detailRow div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   grid-gap: 1rem;
 }
 
-.container .weather .mainInfo {
-  text-align: center;
-}
-
-.container .weather .subInfo {
-  text-align: left;
-}
-
 .loading {
-  color: white;
   text-align: center;
 }
 /*# sourceMappingURL=Weather.css.map */

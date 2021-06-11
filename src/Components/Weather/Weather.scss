@@ -4,39 +4,63 @@ p {
   font-size: 1.5rem;
 }
 
-.container {
-  background-color: $navyTr;
-  color: $white;
-  font-family: "Baloo Tammudu 2", cursive !important;
-  .city {
-    h2 {
-      text-align: center;
+.weatherContainer {
+  padding: 2rem;
+  /* left */
+  .left {
+    .currentRow {
+      flex-direction: row;
+      align-items: center;
+      .temperature {
+        text-align: right;
+        .temp {
+          font-size: 7rem;
+        }
+      }
+      .city {
+        h2 {
+          font-size: 4rem;
+        }
+      }
+      .icon {
+        display: flex;
+      }
+    }
+    .forecastRow {
     }
   }
-  .weather {
-    flex-direction: row;
-    align-items: center;
-    .temperature {
-      text-align: right;
-      .temp {
-        font-size: 4rem;
-        font-weight: bold;
+  /* right */
+  .right {
+    background-color: $navyTr;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    .searchRow {
+      padding: 1rem;
+      a {
+        text-decoration: none;
+        color: $white;
+        &:hover {
+          color: $color6;
+        }
+      }
+    }
+    .detailRow {
+      padding: 1rem;
+      h3 {
+        border-top: 0.1rem $color7 solid;
+        padding-top: 1rem;
+        margin-bottom: 2rem;
       }
       div {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         grid-gap: 1rem;
       }
-    }
-    .mainInfo {
-      text-align: center;
-    }
-    .subInfo {
-      text-align: left;
     }
   }
 }
 .loading {
-  color: $white;
   text-align: center;
 }

@@ -2,9 +2,16 @@
 
 body {
   min-height: 100vh;
-  background-image: url(./bg2.jpg);
+  background-image: url(./bg3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
+#root {
+  min-height: 100vh;
+  font-family: "Mate SC", serif;
+  color: $white;
+  position: relative;
+}
