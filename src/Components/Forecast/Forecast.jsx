@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { FaTint, FaRegCompass, FaThermometerHalf } from "react-icons/fa";
 import { GiPaperWindmill, GiRaining, GiSunrise, GiSunset } from "react-icons/gi";
@@ -7,8 +7,7 @@ import "./Forecast.css";
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-const Forecast = (props) => {
-  console.log(props.location.state.dailyForecast);
+const Forecast = () => {
   const { currentWeather, oneCallWeatherInfo } = useContext(WeatherContext);
 
   return (
@@ -19,7 +18,8 @@ const Forecast = (props) => {
           <Row>
             {oneCallWeatherInfo.daily.map((elem, index) => (
               <Col key={elem[index]}>
-                <h3><Moment unix format="LL">{elem.dt}</Moment></h3>
+                <h3><Moment unix format="MMM DD">{elem.dt}</Moment></h3>
+                <h4><Moment unix format="ddd">{elem.dt}</Moment></h4>
                 <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
                 <p className="feelLike"><FaThermometerHalf></FaThermometerHalf> {Math.round([elem.feels_like.day])}°</p>
                 <div className="temperature">

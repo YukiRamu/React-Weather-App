@@ -2,24 +2,38 @@ p {
   font-size: 1rem;
 }
 
-.forecastContainer {
-  margin-top: 2rem;
-}
-
 .forecastContainer h2 {
   text-align: center;
+  font-size: 4rem;
 }
 
 .forecastContainer .row {
   padding: 1rem 2rem;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .forecastContainer .row .col {
   background-color: rgba(255, 255, 255, 0.482);
   text-align: center;
   margin: 0 0.5rem;
+  padding-top: 2rem;
   -webkit-box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
           box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.forecastContainer .row .col h3 time {
+  background-color: #e2580d92;
+  border-radius: 5vw;
+  padding: 0 1rem;
+}
+
+.forecastContainer .row .col h4 {
+  margin-bottom: 0;
 }
 
 .forecastContainer .row .col .temperature,

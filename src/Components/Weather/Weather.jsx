@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import { Carousel, Row, Col } from 'react-bootstrap';
 import { FaTint, FaRegCompass } from "react-icons/fa";
 import { GiPaperWindmill, GiRaining, GiSunrise, GiSunset, GiTargetArrows } from "react-icons/gi";
@@ -10,15 +10,6 @@ import 'moment-timezone';
 
 const Weather = () => {
   const { currentWeather, oneCallWeatherInfo, currentDate } = useContext(WeatherContext);
-
-
-  console.log("!!!! current weather is ", currentWeather);
-  console.log("!!!! one call data is ", oneCallWeatherInfo);
-  console.log(currentDate);
-
-  //Fri Jun 11 2021 13:24:34 GMT-0700 (Pacific Daylight Time)
-
-  // console.log("forecast is ", forecast); not used
 
   return (
     <>
@@ -85,7 +76,7 @@ const Weather = () => {
                         dailyForecast: oneCallWeatherInfo.daily
                       }
                     }}
-                    className="forecastLink "><GiTargetArrows></GiTargetArrows> Daily Forecast</Link>
+                    className="forecastLink "><GiTargetArrows></GiTargetArrows> 7 Day Forecast</Link>
                 </Row>
               </Col>
             </Row>

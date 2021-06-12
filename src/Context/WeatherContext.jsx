@@ -1,21 +1,18 @@
 import React, { useState, useEffect, createContext } from "react";
-// import axios from "axios";
-import { FaLess } from "react-icons/fa";
 
 const WeatherContext = createContext();
 
 const WeatherProvider = (props) => {
 
   const [location, setLocation] = useState("Vancouver");
+  const [unit, setUnit] = useState("metric");
   const [currentWeather, setCurrentWeather] = useState();
-  const [forecast, setForecast] = useState();
   const [oneCallWeatherInfo, setOneCallWeatherInfo] = useState();
   const [currentDate, setCurrentDate] = useState();
-  const [hourlyDate, setHourlyDate] = useState([]);
 
   const [error, setError] = useState("");
   const [IsLocationChanged, setIsLocationChanged] = useState(true);
-
+  const [IsUnitChanged, setIsUnitChanged] = useState(false);
 
   /* method to convert Unix timestamp to Date and Time */
   const calcDateNTime = (fetchedData) => {
@@ -27,8 +24,6 @@ const WeatherProvider = (props) => {
     let selectedCity = UTC + (fetchedData.timezone * 1000);
     let timeInSelectedCity = new Date(selectedCity);
 
-    // console.log(timeInSelectedCity);
-    // console.log(timeInSelectedCity.toString().substr(0, 24));
     setCurrentDate(timeInSelectedCity.toString().substr(0, 15));
   };
 
@@ -42,12 +37,12 @@ const WeatherProvider = (props) => {
     (async () => {
       try {
         //fetch current data : location !== "" is to prevent fetch api being executed when the input field is cleared
-        if ((IsLocationChanged) && (location !== "")) {
-          console.log("!!!!!! flag true weather context location is", location);
-          const currentRes = await fetch(`${ENDPOINT_CURRENT_WEATHER}q=${location}&units=metric&appid=${API_KEY}`);
+        if (((IsLocationChanged) && (location !== "")) || (IsUnitChanged)) {
+          const currentRes = await fetch(`${ENDPOINT_CURRENT_WEATHER}q=${location}&units=${unit}&appid=${API_KEY}`);
+
           if (!currentRes.ok) {
             if (currentRes.status === 404) {
-              setError("Location not found : Location = ", location);
+              setError("Location not found");
               //clear location and set flag false
               setLocation("");
               setIsLocationChanged(false);
@@ -62,16 +57,16 @@ const WeatherProvider = (props) => {
 
             try {
               //fetch all weather data
-              const oneCallRes = await fetch(`${ENDPOINT_ONECALL}lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&units=metric&appid=${API_KEY}`);
+              const oneCallRes = await fetch(`${ENDPOINT_ONECALL}lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&units=${unit}&appid=${API_KEY}`);
               if (!oneCallRes.ok) {
                 throw oneCallRes.statusText;
               } else {
                 const oneCallData = await oneCallRes.json();
                 setOneCallWeatherInfo(oneCallData);
 
-                //clear location and set flag false
-                setLocation("");
-                setIsLocationChanged(false);
+                //changet flags 
+                setIsLocationChanged(false); //prevent re-rendering while inputting location
+                setIsUnitChanged(false); //back to default
               }
             } catch (error) {
               console.error(`Error = ${error} : Failed to fetch forefast`);
@@ -84,15 +79,13 @@ const WeatherProvider = (props) => {
         return error;
       }
     })();
-  }, [location, IsLocationChanged]);
+  }, [location, IsLocationChanged, unit, IsUnitChanged]);
 
   return (
     <>
       <WeatherContext.Provider value={{
         currentWeather,
         setCurrentWeather,
-        forecast, //not used,
-        setForecast, //not used
         oneCallWeatherInfo,
         setOneCallWeatherInfo,//not used
         currentDate,
@@ -102,7 +95,11 @@ const WeatherProvider = (props) => {
         location,
         setLocation,
         IsLocationChanged,
-        setIsLocationChanged
+        setIsLocationChanged,
+        unit,
+        setUnit,
+        IsUnitChanged,
+        setIsUnitChanged
       }}>
         {props.children}
       </WeatherContext.Provider>
