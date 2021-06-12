@@ -6,4 +6,14 @@
   flex-direction: row;
   align-items: center;
   padding: 1rem;
+  padding-bottom: 0;
+  .title {
+    a {
+      text-decoration: none;
+      color: $white;
+      &:hover {
+        color: $color6;
+      }
+    }
+  }
 }

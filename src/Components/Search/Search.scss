@@ -1,8 +1,90 @@
+@import "../../color";
+
 .searchForm {
   position: relative;
+  z-index: 1;
+  padding: 1rem;
+  padding-bottom: 0;
+  .form-group {
+    margin-right: 60px;
+    .form-control {
+      border: none;
+      border-bottom: 0.1rem solid $color7;
+      background-color: transparent;
+      outline: none;
+      -webkit-appearance: button;
+      height: 40px;
+      color: $white;
+      border-radius: none;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &:active {
+        outline: none;
+        box-shadow: none;
+      }
+      &:-internal-autofill-selected {
+        background-color: transparent;
+      }
+    }
+  }
   .searchBtn {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3%;
+    border-radius: unset;
+    background-color: $color6;
+    border-color: $color6;
+    width: 50px;
+    height: 50px;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border: 0.1rem solid $white;
+      color: $color6;
+      outline: none;
+      box-shadow: none;
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $white;
+      &:hover{
+        color: $color6;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.errorMsg {
+  z-index: 1;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $color5Tr;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+.helpLink {
+  display: block;
+  text-decoration: none;
+  color: $white;
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  width: fit-content !important;
+  &:hover {
+    color: $color6;
+  }
+  &:focus {
+    color: $color6;
+    border: none;
+    outline: none;
   }
 }

@@ -13,5 +13,15 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
+  padding-bottom: 0;
+}
+
+.header .title a {
+  text-decoration: none;
+  color: white;
+}
+
+.header .title a:hover {
+  color: #d66c05;
 }
 /*# sourceMappingURL=Header.css.map */

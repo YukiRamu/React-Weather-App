@@ -1,0 +1,41 @@
+@import "../../color";
+
+p {
+  font-size: 1rem;
+}
+.forecastContainer {
+  margin-top: 2rem;
+  h2 {
+    text-align: center;
+  }
+  .row {
+    padding: 1rem 2rem;
+    .col {
+      background-color: $whiteTr;
+      text-align: center;
+      margin: 0 0.5rem;
+      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      .temperature,
+      .sun,
+      .humidity,
+      .pressure {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        p {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}

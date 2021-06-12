@@ -6,6 +6,7 @@ p {
 
 .weatherContainer {
   padding: 2rem;
+  padding-top: 0;
   /* left */
   .left {
     .currentRow {
@@ -18,36 +19,91 @@ p {
         }
       }
       .city {
+        text-align: center;
         h2 {
           font-size: 4rem;
+        }
+        p {
+          font-size: 2rem;
+          margin-bottom: 0;
+        }
+        .sun {
+          display: flex;
+          justify-content: center;
+          p {
+            font-size: 1.5rem;
+            margin: 1rem;
+          }
         }
       }
       .icon {
         display: flex;
       }
     }
-    .forecastRow {
+    .hourlyRow {
+      margin-top: 3rem;
+      .carousel {
+        .carousel-inner {
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            height: 10px;
+          }
+          &::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: $navyTr;
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: $color6;
+            border-radius: 10px;
+          }
+          .carousel-item {
+            display: flex;
+            .hourlyPanel {
+              margin: 0 0.5rem;
+              padding: 2rem;
+              background-color: $whiteTr;
+              text-align: center;
+              box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+              img {
+                background-color: $blueTr;
+                clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                padding: 1rem;
+              }
+              time {
+                font-size: 1.5rem;
+                display: block;
+              }
+              .date {
+                background-color: $color6Tr;
+                border-radius: 5vw;
+              }
+            }
+          }
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+          .sr-only {
+            display: none;
+          }
+        }
+      }
     }
   }
   /* right */
   .right {
+    backdrop-filter: blur(10px);
     background-color: $navyTr;
     position: absolute;
     right: 0;
     top: 0;
     height: 100%;
-    .searchRow {
-      padding: 1rem;
-      a {
-        text-decoration: none;
-        color: $white;
-        &:hover {
-          color: $color6;
-        }
-      }
-    }
     .detailRow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       padding: 1rem;
+      padding-right: 2rem;
       h3 {
         border-top: 0.1rem $color7 solid;
         padding-top: 1rem;
@@ -58,9 +114,27 @@ p {
         justify-content: flex-start;
         grid-gap: 1rem;
       }
+      a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: $white;
+        background: $color6;
+        &:hover {
+          color: $color6;
+          border: 0.1rem $color7 solid;
+          background-color: $navyTr;
+        }
+      }
     }
   }
 }
 .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  width: 100%;
   text-align: center;
 }

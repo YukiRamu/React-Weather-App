@@ -1,10 +1,108 @@
 .searchForm {
   position: relative;
+  z-index: 1;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.searchForm .form-group {
+  margin-right: 60px;
+}
+
+.searchForm .form-group .form-control {
+  border: none;
+  border-bottom: 0.1rem solid #e7cfbf;
+  background-color: transparent;
+  outline: none;
+  -webkit-appearance: button;
+  height: 40px;
+  color: white;
+  border-radius: none;
+}
+
+.searchForm .form-group .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.searchForm .form-group .form-control:active {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.searchForm .form-group .form-control:-internal-autofill-selected {
+  background-color: transparent;
 }
 
 .searchForm .searchBtn {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 3%;
+  border-radius: unset;
+  background-color: #d66c05;
+  border-color: #d66c05;
+  width: 50px;
+  height: 50px;
+}
+
+.searchForm .searchBtn:hover, .searchForm .searchBtn:focus {
+  background-color: transparent;
+  border: 0.1rem solid white;
+  color: #d66c05;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.searchForm .searchBtn svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+
+.searchForm .searchBtn svg:hover {
+  color: #d66c05;
+  font-weight: bold;
+}
+
+.errorMsg {
+  z-index: 1;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #c83803d5;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.helpLink {
+  display: block;
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.helpLink:hover {
+  color: #d66c05;
+}
+
+.helpLink:focus {
+  color: #d66c05;
+  border: none;
+  outline: none;
 }
 /*# sourceMappingURL=Search.css.map */

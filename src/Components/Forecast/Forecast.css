@@ -1,0 +1,61 @@
+p {
+  font-size: 1rem;
+}
+
+.forecastContainer {
+  margin-top: 2rem;
+}
+
+.forecastContainer h2 {
+  text-align: center;
+}
+
+.forecastContainer .row {
+  padding: 1rem 2rem;
+}
+
+.forecastContainer .row .col {
+  background-color: rgba(255, 255, 255, 0.482);
+  text-align: center;
+  margin: 0 0.5rem;
+  -webkit-box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+          box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.forecastContainer .row .col .temperature,
+.forecastContainer .row .col .sun,
+.forecastContainer .row .col .humidity,
+.forecastContainer .row .col .pressure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.forecastContainer .row .col .temperature p,
+.forecastContainer .row .col .sun p,
+.forecastContainer .row .col .humidity p,
+.forecastContainer .row .col .pressure p {
+  padding: 0 0.5rem;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+/*# sourceMappingURL=Forecast.css.map */
