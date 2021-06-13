@@ -42,11 +42,11 @@
 }
 
 .header .title .unit .unitBtn {
-  border: 0.1rem solid #d66c05;
-  background-color: transparent;
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
 }
 
-.header .title .unit .unitBtn:active {
-  background-color: #d66c05;
+.header .title .unit .unitBtn input {
+  display: none;
 }
 /*# sourceMappingURL=Header.css.map */

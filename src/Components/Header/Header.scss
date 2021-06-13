@@ -22,10 +22,11 @@
     .unit {
       margin-left: 1rem;
       .unitBtn {
-        border: 0.1rem solid $color6;
-        background-color: transparent;
-        &:active {
-          background-color: $color6;
+        padding: 0 0.5rem;
+        margin: 0 0.5rem;
+        color: $white;
+        input {
+          display: none;
         }
       }
     }
