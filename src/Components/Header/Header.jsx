@@ -3,17 +3,13 @@ import "./Header.css";
 import { Row, Nav } from 'react-bootstrap';
 import Search from "../Search/Search";
 import { TiWeatherSnow } from "react-icons/ti";
+import { GiPineTree } from "react-icons/gi";
 import { Link } from 'react-router-dom';
 import { WeatherContext } from '../../Context/WeatherContext';
 
 const Header = () => {
 
   const { unit, setUnit, setIsUnitChanged } = useContext(WeatherContext);
-  // const [style, setCheckedStyle] = useState({
-  //   "backgroundColor": " #d66c05",
-  //   "backgroundColor": "transparent",
-  //   "color": "#0e2532"
-  // });
 
   const defaultStyleMetric = {
     "border": "0.1rem solid #d66c05",
@@ -44,8 +40,6 @@ const Header = () => {
     }
   };
 
-
-
   return (
     <>
       {unit ? (
@@ -73,6 +67,12 @@ const Header = () => {
                 Fahrenheit
               </label>
             </div>
+            <Link to="/home" className="link">
+              <GiPineTree></GiPineTree> Current weather
+            </Link>
+            <Link to="/forecast" className="link">
+              <GiPineTree></GiPineTree> 7 Day Forecast
+            </Link>
           </Nav>
           <Search />
         </Row>

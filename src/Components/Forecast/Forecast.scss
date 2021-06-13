@@ -15,6 +15,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    backdrop-filter: blur(8px);
     .col {
       background-color: $whiteTr;
       text-align: center;

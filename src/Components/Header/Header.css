@@ -35,6 +35,7 @@
 
 .header .title a:hover {
   color: #d66c05;
+  font-weight: bold;
 }
 
 .header .title .unit {
@@ -44,9 +45,19 @@
 .header .title .unit .unitBtn {
   padding: 0 0.5rem;
   margin: 0 0.5rem;
+  color: white;
 }
 
 .header .title .unit .unitBtn input {
   display: none;
+}
+
+.header .title .link {
+  font-size: 1rem;
+}
+
+.header .title .link:hover {
+  border-bottom: 0.1rem solid white;
+  font-weight: bold;
 }
 /*# sourceMappingURL=Header.css.map */

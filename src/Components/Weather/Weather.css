@@ -67,6 +67,10 @@ p {
           align-items: center;
 }
 
+.weatherContainer .left .currentRow .icon p {
+  font-size: 1.5rem;
+}
+
 .weatherContainer .left .hourlyRow {
   margin-top: 3rem;
 }
@@ -81,7 +85,7 @@ p {
 
 .weatherContainer .left .hourlyRow .carousel .carousel-inner::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: #0e2532d6;
+  background-color: #0e2532be;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
@@ -123,15 +127,19 @@ p {
   border-radius: 5vw;
 }
 
+.weatherContainer .left .hourlyRow .carousel .carousel-inner .carousel-item .hourlyPanel p {
+  font-size: 2rem;
+}
+
 .weatherContainer .left .hourlyRow .carousel .carousel-control-prev .sr-only,
 .weatherContainer .left .hourlyRow .carousel .carousel-control-next .sr-only {
   display: none;
 }
 
 .weatherContainer .right {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  background-color: #0e2532d6;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  background-color: #0e2532be;
   position: absolute;
   right: 0;
   top: 0;
@@ -145,6 +153,10 @@ p {
           transform: translateY(-50%);
   padding: 1rem;
   padding-right: 2rem;
+}
+
+.weatherContainer .right .detailRow p {
+  font-size: 1.5rem;
 }
 
 .weatherContainer .right .detailRow h3 {
@@ -174,7 +186,7 @@ p {
 .weatherContainer .right .detailRow a:hover {
   color: #d66c05;
   border: 0.1rem #e7cfbf solid;
-  background-color: #0e2532d6;
+  background-color: #0e2532be;
 }
 
 .loading {

@@ -52,7 +52,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: $white;
-      &:hover{
+      &:hover {
         color: $color6;
         font-weight: bold;
       }
@@ -81,6 +81,7 @@
   width: fit-content !important;
   &:hover {
     color: $color6;
+    font-weight: bold;
   }
   &:focus {
     color: $color6;

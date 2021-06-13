@@ -8,8 +8,6 @@ import "./Search.css";
 const Search = () => {
   const { error, setError, location, setLocation, setIsLocationChanged } = useContext(WeatherContext);
 
-
-
   const SearchCity = (e) => {
     e.preventDefault();
 

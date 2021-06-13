@@ -98,6 +98,7 @@
 
 .helpLink:hover {
   color: #d66c05;
+  font-weight: bold;
 }
 
 .helpLink:focus {
