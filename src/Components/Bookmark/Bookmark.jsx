@@ -1,13 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
 import { WeatherContext } from "../../Context/WeatherContext";
+import { useHistory } from 'react-router-dom';
+import { Row, Col, Button } from 'react-bootstrap';
 import "./Bookmark.css";
 
 const Bookmark = (props) => {
 
-  const { unit, setUnit } = useContext(WeatherContext);
+  const { unit, setUnit, location, setLocation, setIsLocationChanged } = useContext(WeatherContext);
+  let history = useHistory();
   const [dataForBookmark, setDataForBookmark] = useState([]);
   const [bookmarkMsg, setBookmarkMsg] = useState("");
+
+  //Button click handler
+  const handleClick = (elem) => {
+    console.log("I am here", elem.name, history);
+    setLocation(elem.name);
+    setIsLocationChanged(true);
+    history.push("/home"); //redirect
+  };
 
   useEffect(() => {
     const API_KEY = "429736441cf3572838aa10530929f7cd";
@@ -43,7 +53,6 @@ const Bookmark = (props) => {
         window.name = "";
       }
     } else {
-      console.log("no bookmark added yet");
       setBookmarkMsg("No location added yet");
     }
   }, []);
@@ -57,7 +66,7 @@ const Bookmark = (props) => {
             <Row className="row-cols-lg-4">
               {dataForBookmark.map(((elem, index) => (
                 <>
-                  <Col className="locationPanel">
+                  <Button className="locationPanel col" key={elem} onClick={() => { handleClick(elem); }}>
                     <h3>{elem.name}</h3>
                     <div className="detail">
                       <p className="temp">{Math.round([elem.main.temp])} °</p>
@@ -67,7 +76,7 @@ const Bookmark = (props) => {
                         <p>H : {Math.round([elem.main.temp_max])} ° | L : {Math.round([elem.main.temp_max])} °</p>
                       </div>
                     </div>
-                  </Col>
+                  </Button>
                 </>
               )))}
             </Row>
