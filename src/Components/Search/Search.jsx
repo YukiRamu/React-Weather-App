@@ -13,10 +13,9 @@ const Search = () => {
 
   const SearchCity = (e) => {
     e.preventDefault();
-    console.log(e);
 
     //if searched on bookmark page --> redirect to homepage
-    if (e.target.action.indexOf("bookmark")) {
+    if (e.target.action.slice(-8) === "bookmark") {
       history.push("/home");
     }
 

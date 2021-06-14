@@ -6,17 +6,32 @@ import "./Bookmark.css";
 
 const Bookmark = (props) => {
 
-  const { unit, setUnit, location, setLocation, setIsLocationChanged } = useContext(WeatherContext);
+  const { unit, setUnit, location, setLocation, setIsLocationChanged, message, setMsg } = useContext(WeatherContext);
   let history = useHistory();
   const [dataForBookmark, setDataForBookmark] = useState([]);
   const [bookmarkMsg, setBookmarkMsg] = useState("");
 
   //Button click handler
   const handleClick = (elem) => {
-    console.log("I am here", elem.name, history);
     setLocation(elem.name);
     setIsLocationChanged(true);
     history.push("/home"); //redirect
+  };
+
+  const deleteLocation = (e) => {
+    console.log(e);
+    let bookmark = JSON.parse(localStorage.getItem("bookmark"));
+    let filtered = bookmark.filter(elem => elem !== e.target.nextElementSibling.childNodes[0].innerText);
+    localStorage.setItem("bookmark", JSON.stringify(filtered));
+    setMsg(`✔️  ${e.target.nextElementSibling.childNodes[0].innerText} is successfully deleted from your location list`);
+    setTimeout(() => { setMsg(""); }, 2500);
+    //force reload to render the component
+    if (window.name != "any") {
+      window.location.reload();
+      window.name = "any";
+    } else {
+      window.name = "";
+    }
   };
 
   useEffect(() => {
@@ -66,17 +81,22 @@ const Bookmark = (props) => {
             <Row className="row-cols-lg-4">
               {dataForBookmark.map(((elem, index) => (
                 <>
-                  <Button className="locationPanel col" key={elem} onClick={() => { handleClick(elem); }}>
-                    <h3>{elem.name}</h3>
-                    <div className="detail">
-                      <p className="temp">{Math.round([elem.main.temp])} °</p>
-                      <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
-                      <div>
-                        <p className="feelLike">Feels like: {Math.round([elem.main.feels_like])}°</p>
-                        <p>H : {Math.round([elem.main.temp_max])} ° | L : {Math.round([elem.main.temp_max])} °</p>
+                  <div key={elem} >
+                    <button className="delBtn" onClick={(e) => { deleteLocation(e); }}>x</button>
+                    <Button className="locationPanel col" onClick={() => { handleClick(elem); }}>
+                      <div className="cityName">
+                        <h3>{elem.name}</h3>
                       </div>
-                    </div>
-                  </Button>
+                      <div className="detail">
+                        <p className="temp">{Math.round([elem.main.temp])} °</p>
+                        <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
+                        <div>
+                          <p className="feelLike">Feels like: {Math.round([elem.main.feels_like])}°</p>
+                          <p>H : {Math.round([elem.main.temp_max])} ° | L : {Math.round([elem.main.temp_max])} °</p>
+                        </div>
+                      </div>
+                    </Button>
+                  </div>
                 </>
               )))}
             </Row>
@@ -85,6 +105,12 @@ const Bookmark = (props) => {
       ) : (<h1 className="loading">Loading...Hang on a sec...</h1>)}
       {bookmarkMsg ? (
         <h1 className="loading">{bookmarkMsg}</h1>
+      ) : ""}
+      {/* Message for bookmark feature */}
+      {(message !== "") ? (
+        <>
+          <p className="message">{message}</p>
+        </>
       ) : ""}
     </>
   );
