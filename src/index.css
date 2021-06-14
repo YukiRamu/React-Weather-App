@@ -1,3 +1,21 @@
+@-webkit-keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
 body {
   min-height: 100vh;
   background-image: url(./bg3.jpg);

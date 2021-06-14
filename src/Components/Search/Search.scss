@@ -69,6 +69,7 @@
   text-align: center;
   padding: 0.5rem;
   font-size: 1.5rem;
+  animation: fadeIn .3s linear;
 }
 .helpLink {
   display: block;
@@ -79,6 +80,7 @@
   right: 10px;
   top: 70px;
   width: fit-content !important;
+  padding-inline-start: 0;
   &:hover {
     color: $color6;
     font-weight: bold;

@@ -1,0 +1,60 @@
+@-webkit-keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+/* Bookmark button */
+.bookmarkBtn {
+  border: none;
+  z-index: 1;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  right: 155px;
+  top: 70px;
+  padding: 0;
+}
+
+.bookmarkBtn:hover {
+  color: #d66c05;
+  font-weight: bold;
+}
+
+.bookmarkBtn:focus {
+  color: #d66c05;
+  border: none;
+  outline: none;
+}
+
+.message {
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #1777aac5;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+  -webkit-animation: fadeIn 0.3s linear;
+          animation: fadeIn 0.3s linear;
+}
+/*# sourceMappingURL=AddBookmark.css.map */

@@ -1,0 +1,54 @@
+@-webkit-keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+.bookmarkContainer h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.bookmarkContainer .row {
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bookmarkContainer .row .locationPanel {
+  width: 40%;
+  margin: 1rem;
+}
+
+.bookmarkContainer .row .odd {
+  background-color: #add8e6;
+}
+
+.bookmarkContainer .row .even {
+  background-color: #ffb6c1;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+/*# sourceMappingURL=Bookmark.css.map */

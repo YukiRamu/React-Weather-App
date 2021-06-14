@@ -1,3 +1,21 @@
+@-webkit-keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
 .searchForm {
   position: relative;
   z-index: 1;
@@ -77,10 +95,12 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background-color: #c83803d5;
+  background-color: #c82a03c1;
   text-align: center;
   padding: 0.5rem;
   font-size: 1.5rem;
+  -webkit-animation: fadeIn .3s linear;
+          animation: fadeIn .3s linear;
 }
 
 .helpLink {
@@ -94,6 +114,8 @@
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
 }
 
 .helpLink:hover {

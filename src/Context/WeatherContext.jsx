@@ -11,6 +11,7 @@ const WeatherProvider = (props) => {
   const [currentDate, setCurrentDate] = useState();
 
   const [error, setError] = useState("");
+  const [message, setMsg] = useState("");
   const [IsLocationChanged, setIsLocationChanged] = useState(true);
   const [IsUnitChanged, setIsUnitChanged] = useState(false);
 
@@ -31,7 +32,6 @@ const WeatherProvider = (props) => {
   useEffect(() => {
     const API_KEY = "24c4a9756532c3d6df0a376bc2cbe669";
     const ENDPOINT_CURRENT_WEATHER = "http://api.openweathermap.org/data/2.5/weather?";
-    const ENDPOINT_FORECAST = "http://api.openweathermap.org/data/2.5/forecast?";
     const ENDPOINT_ONECALL = "http://api.openweathermap.org/data/2.5/onecall?";
 
     (async () => {
@@ -42,7 +42,7 @@ const WeatherProvider = (props) => {
 
           if (!currentRes.ok) {
             if (currentRes.status === 404) {
-              setError("Location not found");
+              setError("❌ Location not found");
               //clear location and set flag false
               setLocation("");
               setIsLocationChanged(false);
@@ -56,7 +56,7 @@ const WeatherProvider = (props) => {
             calcDateNTime(currentData);
 
             try {
-              //fetch all weather data
+              //fetch all weather data (for forecast)
               const oneCallRes = await fetch(`${ENDPOINT_ONECALL}lat=${currentData.coord.lat}&lon=${currentData.coord.lon}&units=${unit}&appid=${API_KEY}`);
               if (!oneCallRes.ok) {
                 throw oneCallRes.statusText;
@@ -87,9 +87,7 @@ const WeatherProvider = (props) => {
         currentWeather,
         setCurrentWeather,
         oneCallWeatherInfo,
-        setOneCallWeatherInfo,//not used
         currentDate,
-        setCurrentDate,//not used
         error,
         setError,
         location,
@@ -99,7 +97,9 @@ const WeatherProvider = (props) => {
         unit,
         setUnit,
         IsUnitChanged,
-        setIsUnitChanged
+        setIsUnitChanged,
+        message,
+        setMsg
       }}>
         {props.children}
       </WeatherContext.Provider>

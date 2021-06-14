@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { Carousel, Row, Col } from 'react-bootstrap';
-import { FaTint, FaRegCompass } from "react-icons/fa";
+import { FaTint, FaRegCompass, FaHeart } from "react-icons/fa";
 import { GiPaperWindmill, GiRaining, GiSunrise, GiSunset, GiTargetArrows } from "react-icons/gi";
 import { WeatherContext } from "../../Context/WeatherContext";
 import { Link } from 'react-router-dom';
 import "./Weather.css";
 import Moment from 'react-moment';
 import 'moment-timezone';
+import AddBookmark from "../Bookmark/AddBookmark";
 
 const Weather = () => {
   const { currentWeather, oneCallWeatherInfo, currentDate } = useContext(WeatherContext);
@@ -55,6 +56,9 @@ const Weather = () => {
                   </Carousel>
                 </Row>
               </Col>
+
+              {/* Bookmark Button */}
+              <AddBookmark></AddBookmark>
 
               {/* Weather Detail Right */}
               <Col className="right col-4">

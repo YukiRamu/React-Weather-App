@@ -1,3 +1,21 @@
+@-webkit-keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
+
 p {
   font-size: 1rem;
 }

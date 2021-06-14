@@ -1,0 +1,36 @@
+@import "../../color";
+
+/* Bookmark button */
+.bookmarkBtn {
+  border: none;
+  z-index: 1;
+  width: fit-content !important;
+  background-color: transparent;
+  color: $white;
+  position: absolute;
+  right: 155px;
+  top: 70px;
+  padding: 0;
+  &:hover {
+    color: $color6;
+    font-weight: bold;
+  }
+  &:focus {
+    color: $color6;
+    border: none;
+    outline: none;
+  }
+}
+.message {
+  z-index: 2;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $color4Tr;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+  animation: fadeIn 0.3s linear;
+}

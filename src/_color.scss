@@ -11,6 +11,16 @@ $navy: #0e2532;
 
 $whiteTr: rgba(255, 255, 255, 0.482);
 $navyTr: #0e2532be;
-$color5Tr: #c83803d5;
+$color4Tr: #1777aac5;
+$color5Tr: #c82a03c1;
 $color6Tr: #e2580d92;
 $blueTr: #03172cc0;
+
+@keyframes fadeIn {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 0%;
+  }
+}
