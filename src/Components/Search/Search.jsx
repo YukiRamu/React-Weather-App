@@ -17,14 +17,13 @@ const Search = () => {
 
     //if searched on bookmark page --> redirect to homepage
     if (e.target.action.indexOf("bookmark")) {
-      console.log("I am on bookmark page");
       history.push("/home");
     }
 
     // validation check
     if ((location === "") || (!isNaN(location))) {
       setError("❌ Please enter valid location");
-      setTimeout(() => { setError(""); }, 2500);
+      setTimeout(() => { setError(""); }, 2000);
     }
     else {
       setLocation(location);

@@ -30,7 +30,8 @@ const WeatherProvider = (props) => {
 
   /* fetch Vancouver weather */
   useEffect(() => {
-    const API_KEY = "24c4a9756532c3d6df0a376bc2cbe669";
+    // const API_KEY = "a11a837e1cf3fcb33bb6b696ba803ea9";
+    const API_KEY = "429736441cf3572838aa10530929f7cd";
     const ENDPOINT_CURRENT_WEATHER = "http://api.openweathermap.org/data/2.5/weather?";
     const ENDPOINT_ONECALL = "http://api.openweathermap.org/data/2.5/onecall?";
 
@@ -43,6 +44,7 @@ const WeatherProvider = (props) => {
           if (!currentRes.ok) {
             if (currentRes.status === 404) {
               setError("❌ Location not found");
+              setTimeout(() => { setError(""); }, 2000);
               //clear location and set flag false
               setLocation("");
               setIsLocationChanged(false);

@@ -22,23 +22,42 @@
 }
 
 .bookmarkContainer .row {
-  margin: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .bookmarkContainer .row .locationPanel {
-  width: 40%;
   margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.482);
+  -webkit-box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+          box-shadow: #ccdbe8 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
-.bookmarkContainer .row .odd {
-  background-color: #add8e6;
+.bookmarkContainer .row .locationPanel h3 {
+  margin-bottom: 0;
 }
 
-.bookmarkContainer .row .even {
-  background-color: #ffb6c1;
+.bookmarkContainer .row .locationPanel .detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.bookmarkContainer .row .locationPanel .detail .temp {
+  font-size: 4rem;
 }
 
 .loading {

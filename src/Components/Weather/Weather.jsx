@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Carousel, Row, Col } from 'react-bootstrap';
-import { FaTint, FaRegCompass, FaHeart } from "react-icons/fa";
+import { FaTint, FaRegCompass } from "react-icons/fa";
 import { GiPaperWindmill, GiRaining, GiSunrise, GiSunset, GiTargetArrows } from "react-icons/gi";
 import { WeatherContext } from "../../Context/WeatherContext";
 import { Link } from 'react-router-dom';
