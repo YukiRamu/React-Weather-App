@@ -8,6 +8,8 @@ const Bookmark = (props) => {
 
   const { unit, setUnit, location, setLocation, setIsLocationChanged, message, setMsg } = useContext(WeatherContext);
   let history = useHistory();
+
+  //private state hook
   const [dataForBookmark, setDataForBookmark] = useState([]);
   const [bookmarkMsg, setBookmarkMsg] = useState("");
 
@@ -19,7 +21,6 @@ const Bookmark = (props) => {
   };
 
   const deleteLocation = (e) => {
-    console.log(e);
     let bookmark = JSON.parse(localStorage.getItem("bookmark"));
     let filtered = bookmark.filter(elem => elem !== e.target.nextElementSibling.childNodes[0].innerText);
     localStorage.setItem("bookmark", JSON.stringify(filtered));
@@ -81,7 +82,7 @@ const Bookmark = (props) => {
             <Row className="row-cols-lg-4">
               {dataForBookmark.map(((elem, index) => (
                 <>
-                  <div key={elem} >
+                  <div key={elem} className="col" >
                     <button className="delBtn" onClick={(e) => { deleteLocation(e); }}>x</button>
                     <Button className="locationPanel col" onClick={() => { handleClick(elem); }}>
                       <div className="cityName">

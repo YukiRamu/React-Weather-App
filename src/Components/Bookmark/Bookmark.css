@@ -16,6 +16,10 @@
   }
 }
 
+.bookmarkContainer {
+  margin: 0 1rem;
+}
+
 .bookmarkContainer h2 {
   text-align: center;
   font-size: 4rem;
@@ -29,6 +33,7 @@
 
 .bookmarkContainer .row div {
   position: relative;
+  padding: 0;
 }
 
 .bookmarkContainer .row .delBtn {
@@ -102,7 +107,7 @@
 }
 
 .bookmarkContainer .row .locationPanel .detail .temp {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .loading {
