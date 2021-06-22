@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { WeatherContext } from "../../Context/WeatherContext";
 import { useHistory } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Button } from 'react-bootstrap';
 import "./Bookmark.css";
 
 const Bookmark = (props) => {
 
-  const { unit, setUnit, location, setLocation, setIsLocationChanged, message, setMsg } = useContext(WeatherContext);
+  const { unit, setLocation, setIsLocationChanged, message, setMsg } = useContext(WeatherContext);
   let history = useHistory();
 
   //private state hook

@@ -20,7 +20,7 @@ const App = () => {
     <>
       <WeatherProvider>
         {/* React Router*/}
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           {/* Scroll to Top */}
           <ScrollToTop>
             {/* Header */}
