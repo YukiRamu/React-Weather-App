@@ -32,8 +32,8 @@ const WeatherProvider = (props) => {
   useEffect(() => {
     // const API_KEY = "a11a837e1cf3fcb33bb6b696ba803ea9"; blocked
     const API_KEY = "429736441cf3572838aa10530929f7cd";
-    const ENDPOINT_CURRENT_WEATHER = "http://api.openweathermap.org/data/2.5/weather?";
-    const ENDPOINT_ONECALL = "http://api.openweathermap.org/data/2.5/onecall?";
+    const ENDPOINT_CURRENT_WEATHER = "https://api.openweathermap.org/data/2.5/weather?";
+    const ENDPOINT_ONECALL = "https://api.openweathermap.org/data/2.5/onecall?";
 
     (async () => {
       try {
