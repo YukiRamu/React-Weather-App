@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from 'react-router-dom';
@@ -20,7 +20,7 @@ const App = () => {
     <>
       <WeatherProvider>
         {/* React Router*/}
-        <Router>
+        <BrowserRouter>
           {/* Scroll to Top */}
           <ScrollToTop>
             {/* Header */}
@@ -35,7 +35,7 @@ const App = () => {
             {/* Footer */}
             <Footer />
           </ScrollToTop>
-        </Router>
+        </BrowserRouter>
       </WeatherProvider>
     </>
   );
