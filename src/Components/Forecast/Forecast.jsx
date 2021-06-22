@@ -22,7 +22,7 @@ const Forecast = () => {
                 <Col key={elem[index]}>
                   <h3><Moment unix format="MMM DD">{elem.dt}</Moment></h3>
                   <h4><Moment unix format="ddd">{elem.dt}</Moment></h4>
-                  <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
+                  <img src={`https://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
                   <p className="feelLike"><FaThermometerHalf></FaThermometerHalf> {Math.round([elem.feels_like.day])}°</p>
                   <div className="temperature">
                     <p className="max">H : {Math.round([elem.temp.max])} °</p>

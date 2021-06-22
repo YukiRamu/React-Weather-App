@@ -34,7 +34,7 @@ const Weather = () => {
                     </div>
                   </Col>
                   <Col className="icon">
-                    <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="icon"></img>
+                    <img src={`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="icon"></img>
                     <p>{currentWeather.weather[0].main}</p>
                   </Col>
                 </Row>
@@ -48,7 +48,7 @@ const Weather = () => {
                         <Col className="hourlyPanel" key={elem[index]}>
                           <Moment unix format="MMM DD" className="date">{elem.dt}</Moment>
                           <Moment unix format="LT">{elem.dt}</Moment>
-                          <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}.png`} alt="icon" />
+                          <img src={`https://openweathermap.org/img/wn/${elem.weather[0].icon}.png`} alt="icon" />
                           <p>{Math.round([elem.temp])} °</p>
                         </Col>
                       ))}

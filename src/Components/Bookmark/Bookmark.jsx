@@ -37,7 +37,7 @@ const Bookmark = (props) => {
 
   useEffect(() => {
     const API_KEY = "429736441cf3572838aa10530929f7cd";
-    const ENDPOINT_CURRENT_WEATHER = "http://api.openweathermap.org/data/2.5/weather?";
+    const ENDPOINT_CURRENT_WEATHER = "https://api.openweathermap.org/data/2.5/weather?";
     let locationArray = [];
 
     //get bookmark when location is already added
@@ -90,7 +90,7 @@ const Bookmark = (props) => {
                       </div>
                       <div className="detail">
                         <p className="temp">{Math.round([elem.main.temp])} °</p>
-                        <img src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
+                        <img src={`https://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`} alt="icon"></img>
                         <div>
                           <p className="feelLike">Feels like: {Math.round([elem.main.feels_like])}°</p>
                           <p>H : {Math.round([elem.main.temp_max])} ° | L : {Math.round([elem.main.temp_max])} °</p>
