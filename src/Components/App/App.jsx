@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  HashRouter,
   BrowserRouter,
   Switch,
   Route
@@ -20,7 +21,7 @@ const App = () => {
     <>
       <WeatherProvider>
         {/* React Router*/}
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter basename={process.env.PUBLIC_URL + "/"}>
           {/* Scroll to Top */}
           <ScrollToTop>
             {/* Header */}
@@ -28,14 +29,14 @@ const App = () => {
             {/* Router Switch */}
             <Switch>
               <Route exact path="/" component={Weather} />
-              <Route exact path="/home" component={Weather} />
-              <Route exact path="/forecast" component={Forecast} />
-              <Route exact path="/bookmark" component={Bookmark} />
+              <Route  path="/home" component={Weather} />
+              <Route  path="/forecast" component={Forecast} />
+              <Route  path="/bookmark" component={Bookmark} />
             </Switch>
             {/* Footer */}
             <Footer />
           </ScrollToTop>
-        </BrowserRouter>
+        </HashRouter>
       </WeatherProvider>
     </>
   );
